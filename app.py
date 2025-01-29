@@ -1,5 +1,6 @@
 import tkinter as tk
 from tkinter import Listbox, Button
+from windows import CopyTextWindow
 
 class GridCanvas:
     def __init__(self, root, cell_size=20):
@@ -199,8 +200,8 @@ class GridCanvas:
                 end_point = dot
             line_started = False
             commands.append("поднять перо")
-        print(commands, block_lines, self)
-        print("\n".join(commands))
+        text = "\n".join(commands)
+        twindow = CopyTextWindow(self.root, text)
     
     def redraw_lines(self):
         """Redraw all lines on the canvas."""
